@@ -255,17 +255,6 @@ function MusicList({ musics, addToPlaylist, ratings, handleRatingChange, isSongI
               <span>{music.title}</span> by <span>{music.artist}</span> ({music.genre})
             </div>
           </div>
-          <div className="user-rating">
-            {[...Array(5)].map((_, index) => (
-              <span
-                key={index}
-                onClick={() => handleRatingChange(music.id, index + 1)}
-                className={ratings[music.id] && ratings[music.id] >= index + 1 ? "active" : ""}
-              >
-                ⭐
-              </span>
-            ))}
-          </div>
           <button
             className={isSongInPlaylist(music.id) ? "addedButton" : "addToPlaylist"}
             onClick={() => addToPlaylist(music)}
